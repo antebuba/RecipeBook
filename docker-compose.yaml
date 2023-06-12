@@ -1,0 +1,28 @@
+version: '3.7'
+services:
+  recipestore:
+    container_name: recipestore
+    build: .
+    image: recipestore:latest
+    ports:
+      - 80:8080
+    networks:
+      - recipestore-network
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:latest
+    command: --character-set-server=utf8 --collation-server=utf8_general_ci
+    networks:
+      - recipestore-network
+    environment:
+      - MYSQL_ROOT_PASSWORD=lozinka
+      - MYSQL_DATABASE=database
+    volumes:
+      - mysql-data:/var/lib/mysql
+    restart: always
+volumes:
+  mysql-data:
+networks:
+  recipestore-network:
+    driver: bridge

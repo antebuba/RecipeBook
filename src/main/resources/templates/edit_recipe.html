@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+  <meta charset="UTF-8">
+  <title>Recepti - uredi recept</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <div class="d-flex align-items-center justify-content-between">
+    <h1>Uredi recept</h1>
+  </div>
+
+  <form th:action="@{/recipes/update/{id}(id=${recipe.id})}" method="post" th:object="${recipe}">
+    <div class="form-group row">
+      <label class="col-4 col-form-label">Ime recepta: </label>
+      <div class="col-8">
+        <input th:unless="${#fields.hasErrors('title')}" type="text" th:field="*{title}" class="form-control"/>
+        <input th:if="${#fields.hasErrors('title')}" type="text" th:field="*{title}"
+               class="form-control  is-invalid"/>
+        <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="invalid-feedback"></div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-4 col-form-label">Vrijeme pripreme: </label>
+      <div class="col-8">
+        <input th:unless="${#fields.hasErrors('time')}" type="text" th:field="*{time}" class="form-control"/>
+        <input th:if="${#fields.hasErrors('time')}" type="text" th:field="*{time}"
+               class="form-control  is-invalid"/>
+        <div th:if="${#fields.hasErrors('time')}" th:errors="*{time}" class="invalid-feedback"></div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-4 col-form-label">Broj porcija: </label>
+      <div class="col-8">
+        <input th:unless="${#fields.hasErrors('portions')}" type="text" th:field="*{portions}"
+               class="form-control"/>
+        <input th:if="${#fields.hasErrors('portions')}" type="text" th:field="*{portions}"
+               class="form-control  is-invalid"/>
+        <div th:if="${#fields.hasErrors('portions')}" th:errors="*{portions}" class="invalid-feedback"></div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-4 col-form-label">Potrebni sastojci: </label>
+      <div class="col-8">
+        <input th:unless="${#fields.hasErrors('ingredients')}" type="number" th:field="*{ingredients}" class="form-control"/>
+        <input th:if="${#fields.hasErrors('ingredients')}" type="number" th:field="*{ingredients}"
+               class="form-control  is-invalid"/>
+        <div th:if="${#fields.hasErrors('ingredients')}" th:errors="*{ingredients}" class="invalid-feedback"></div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-4 col-form-label">Koraci pripreme: </label>
+      <div class="col-8">
+        <input th:unless="${#fields.hasErrors('steps')}" type="number" th:field="*{steps}" class="form-control"/>
+        <input th:if="${#fields.hasErrors('steps')}" type="number" th:field="*{steps}"
+               class="form-control  is-invalid"/>
+        <div th:if="${#fields.hasErrors('steps')}" th:errors="*{steps}" class="invalid-feedback"></div>
+      </div>
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-primary">Uredi recept</button>
+    </div>
+  </form>
+</div>
+</body>
+</html>

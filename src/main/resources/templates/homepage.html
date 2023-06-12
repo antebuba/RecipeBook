@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>RecipesBook</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #DCD6E2;
+      color: #36C5EB;
+    }
+    ul {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    img{
+      object-position: 0px 30px;
+      height: 100%;
+      width: 100%;
+
+    }
+    #section2 {
+      background-color: #333;
+      color: white;
+      text-align: center;
+    }
+    #section3{
+      background-color: white;
+      color: black;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+<ul>
+  <li><a class="active" href="#home">Početna</a></li>
+  <li><a href="#section2">O nama</a></li>
+  <li><a href="#section3">Kontakt</a></li>
+  <li style="float:right"><a href="register" class="active">Registracija</a></li>
+  <li style="float:right"><a href="login" class="active">Prijava</a></li>
+</ul>
+<img class="homepage" src="/images/Homepage1.jpg">
+
+<div id="section2">
+  <h1>O nama</h1>
+  <p>Pronađite najbolje recepte i inspiracije na jednom mjestu.<br> Meso, riba, vegetarijanska jela ili nešto slatko, mogućnosti su brojne. </p>
+  Kuhaču u ruke i - krenimo!</p>
+  <p style="font-family: brush script mt, cursive ; font-size: 40px;" >“A recipe has no soul. You as the cook must bring soul to the recipe.” - Thomas Keller</p>
+</div>
+<div id="section3">
+  <h1>Kontakt</h1>
+  <p>Kontaktirati nas možete putem mail-a:
+    <br> recipesbook@gmail.com
+    <br> Ili preko telefona:
+    <br> +387 63 123 456
+  </p>
+</div>
+</body>
+</html>
