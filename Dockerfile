@@ -10,6 +10,6 @@ RUN mvn -f /home/app/pom.xml clean package -DskipTests
 # Pokretanje aplikacije
 #
 FROM openjdk:18-jdk-slim
-COPY --from=build /home/app/target/RecipeApplication-0.0.1-SNAPSHOT.jar /usr/local/lib/recipestore.jar
+COPY --from=build /home/app/target/RecipeBookApplication-0.0.1-SNAPSHOT.jar /usr/local/lib/recipestore.jar
 EXPOSE 80
 ENTRYPOINT ["java","-jar","/usr/local/lib/recipestore.jar"]
