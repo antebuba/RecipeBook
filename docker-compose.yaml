@@ -5,7 +5,7 @@ services:
     build: .
     image: recipestore:latest
     ports:
-      - 80:8080
+      - 80:80
     networks:
       - recipestore-network
     depends_on:
